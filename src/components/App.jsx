@@ -47,7 +47,7 @@ export default class App extends Component {
 
         if (page === 1) {
           this.setState({
-            maxPage: Math.ceil(totalHits / hits.length),
+            maxPage: Math.floor(totalHits / hits.length),
             isMaxPage: false,
           });
           toast.success(
@@ -115,10 +115,10 @@ export default class App extends Component {
           gallery={gallery}
           handleOpenModal={this.handleOpenModal}
         />
-        {loading && <MagnifyingGlass />}
-        {gallery.length && !isMaxPage && (
+        {loading && <MagnifyingGlass wrapperClass="spinner" />}
+        {gallery.length && !isMaxPage ? (
           <Button onLoadMore={this.handleLoadMore} />
-        )}
+        ) : null}
         {isModalOpen && (
           <Modal
             currentImg={currentImg}
