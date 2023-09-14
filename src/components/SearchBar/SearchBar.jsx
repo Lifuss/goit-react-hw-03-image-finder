@@ -6,6 +6,7 @@ import {
   StyledSearchForm,
   StyledSpan,
 } from './SearchBar.styled';
+import PropTypes from 'prop-types';
 
 export const Searchbar = ({ onSubmit }) => {
   return (
@@ -25,4 +26,8 @@ export const Searchbar = ({ onSubmit }) => {
       </StyledSearchForm>
     </StyledHeader>
   );
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func,
 };
