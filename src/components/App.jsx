@@ -130,6 +130,3 @@ export default class App extends Component {
     );
   }
 }
-
-// не зроблено повільний скролл,, loader в центрі
-// питання:  при load more через loader екран вверх , при перегляді модалки гортає на врех, появився 0
